@@ -1,0 +1,3 @@
+Ventsplis,8.00,Liepaja,Sv,20:00
+Dagda,Sv
+Dagda,Kraslava,Ce,18:00,2.50,Sv
