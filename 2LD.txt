@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+// Programmas piemērs izpilda sekojošas darbības:
+//Ievada skaitļu virkni. Ir zināms, ka virkne beidzas ar nulli. 
+//Izvada pozitīvus skaitļus, pēc tam negatīvus. Katru no skaitļiem izvada tikai vienu reizi.
+
+int main() {
+  vector <int> nums, nums2;
+  int x;
+
+  // nums (pirmā virkne)
+ // cout << "Ievadi pirmo skaitļu rindu" << endl;
+  while (true) {
+   // cout << "input x: "; 
+    cin >> x;
+    if (x==0)
+      break;
+    if (count(begin(nums), end(nums), x) == 0)
+      nums.push_back(x);
+  }
+
+  // nums 2 (otrā virkne)
+ // cout << "Ievadi otro skaitļu rindu" << endl;
+  while (true) {
+        cin >> x;
+        if (x == 0)
+            break;
+        if (count(begin(nums2), end(nums2), x) == 0) {
+            nums2.push_back(x);
+        }
+    }
+
+  // izvada 1. rindas elementus, kas nav otrajā rindā
+    for (int num : nums) {
+        if (count(begin(nums2), end(nums2), num) == 0) {
+            cout << num << endl;
+        }
+    }
+    cout << endl;
+    return 0;
+}
